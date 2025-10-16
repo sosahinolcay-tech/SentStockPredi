@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom small tweaks */
+body { @apply bg-slate-50; }
+
+.logo { height: 3rem }
+
