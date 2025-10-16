@@ -1,0 +1,21 @@
+[tool]
+name = "stock-predictor-backend"
+version = "0.1.0"
+description = "A backend service for predicting stock prices using historical data and sentiment analysis."
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.75.0"
+uvicorn = "^0.17.0"
+pandas = "^1.3.0"
+yfinance = "^0.1.67"
+newsapi-python = "^0.2.6"
+finbert = "^0.1.0"
+prophet = "^1.0"
+pydantic = "^1.8.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

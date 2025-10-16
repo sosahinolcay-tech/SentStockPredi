@@ -1,0 +1,12 @@
+FastAPI
+uvicorn
+pandas
+yfinance
+newsapi-python
+nltk
+finbert
+prophet
+pydantic
+sqlalchemy
+pytest
+httpx
