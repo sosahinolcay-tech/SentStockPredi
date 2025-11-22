@@ -3,6 +3,7 @@ import { getPrediction } from './api'
 import StockChart from './components/StockChart'
 import SentimentBadge from './components/SentimentBadge'
 import HeadlinesTable from './components/HeadlinesTable'
+import LoadingSpinner from './components/LoadingSpinner'
 
 function App() {
   const [ticker, setTicker] = useState('AAPL')
@@ -57,14 +58,19 @@ function App() {
           </div>
         </header>
 
-        {loading && <div className="mb-4 text-center text-gray-500 animate-pulse">Loading data…</div>}
+        {loading && (
+          <div className="mb-6 text-center text-gray-600 flex items-center justify-center">
+            <LoadingSpinner size={48} />
+            <div className="ml-3 text-base">Loading data…</div>
+          </div>
+        )}
         {error && <div className="text-red-600 mb-4 text-center">{error}</div>}
 
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-10">
-          <div className="lg:col-span-2 bg-white/90 rounded-3xl shadow-xl p-8 backdrop-blur border border-gray-100">
+          <div className="lg:col-span-2 bg-white/90 rounded-3xl shadow-xl p-8 backdrop-blur border border-gray-100 transform transition-transform duration-200 hover:-translate-y-1 hover:shadow-2xl">
             <StockChart history={history} forecast={forecast} />
           </div>
-          <aside className="bg-white/90 rounded-3xl shadow-xl p-8 space-y-8 backdrop-blur border border-gray-100">
+          <aside className="bg-white/90 rounded-3xl shadow-xl p-8 space-y-8 backdrop-blur border border-gray-100 transform transition-transform duration-200 hover:-translate-y-1 hover:shadow-2xl">
             <div>
               <h3 className="text-lg font-semibold text-gray-500 mb-3">Sentiment</h3>
               <div className="flex items-center gap-4">

@@ -7,3 +7,34 @@ body { @apply bg-slate-50; }
 
 .logo { height: 3rem }
 
+/* Loading spinner styles */
+.spinner {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.spinner-svg {
+	width: 100%;
+	height: 100%;
+}
+.spinner-track {
+	stroke: rgba(0,0,0,0.06);
+}
+.spinner-head {
+	stroke: #0a84ff; /* Apple blue */
+	stroke-dasharray: 90;
+	stroke-dashoffset: 0;
+	transform-origin: 50% 50%;
+	animation: spin-head 1s linear infinite;
+}
+
+@keyframes spin-head {
+	from { transform: rotate(0deg); stroke-dashoffset: 90; }
+	to { transform: rotate(360deg); stroke-dashoffset: 0; }
+}
+
+/* Subtle table/row transitions */
+table tr { transition: background-color 160ms ease, transform 160ms ease; }
+.card-hoverable { transition: transform 200ms ease, box-shadow 200ms ease; }
+
+
